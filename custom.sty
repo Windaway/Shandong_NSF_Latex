@@ -1,0 +1,48 @@
+\ProvidesPackage{custom}
+\pagestyle{empty}
+\RequirePackage{geometry}
+\RequirePackage{xeCJK}
+\RequirePackage{titlesec}
+\RequirePackage{setspace}
+\RequirePackage{graphicx}
+\RequirePackage{caption} % 修改图标题的宏包
+
+% 设置A4纸张和页边距
+\geometry{a4paper, left=3.17cm, right=3.17cm, top=2.54cm, bottom=2.54cm}
+
+% 中文字体设置（使用上传的字体文件）
+\setCJKmainfont[Path=./]{SimSun.ttf} % 正文宋体
+\setCJKfamilyfont{hei}[Path=./]{simhei.ttf} % 黑体
+\setCJKfamilyfont{kai}[Path=./]{kt.ttf} % 楷体
+\setCJKfamilyfont{fs}[Path=./]{GB2312.ttf} % 仿宋
+
+% 一级标题设置：黑体三号，行距28磅，段后0磅，段前0磅
+\titleformat{\section}{\bfseries\CJKfamily{hei}\fontsize{16pt}{16pt}\selectfont}{}{0pt}{} % 无编号
+\titlespacing{\section}{0pt}{0pt}{0pt} % 段后设为0磅
+
+% 二级标题设置：楷体三号，行距28磅，段后0磅，段前0磅，首行缩进2字符
+\titleformat{\subsection}{\CJKfamily{kai}\fontsize{16pt}{16pt}\selectfont}{}{0pt}{\hspace{2em}} % 手动插入首行缩进
+\titlespacing{\subsection}{0pt}{0pt}{0pt} % 无段前段后距离
+
+% 三级标题设置：加粗楷书四号
+\titleformat{\subsubsection}{\bfseries\CJKfamily{kai}\fontsize{14pt}{14pt}\selectfont}{}{0pt}{} % 无编号
+\titlespacing{\subsubsection}{0pt}{0pt}{0pt} % 无段前段后距离
+
+% 四级标题设置：斜体宋体四号，标题后空行，前不缩进
+\titleformat{\paragraph}[block]{\bfseries\CJKfamily{SimSun}\fontsize{13pt}{13pt}\selectfont\noindent}{}{0pt}{} % 无编号，斜体宋体
+\titlespacing{\paragraph}{0pt}{0pt}{0pt} % 段后1em空白
+
+% 五级标题设置：宋体四号，标题后空行，前不缩进
+\titleformat{\subparagraph}[block]{\CJKfamily{SimSun}\fontsize{12pt}{12pt}\selectfont\noindent}{}{0pt}{} % 无编号
+\titlespacing{\subparagraph}{0pt}{0pt}{0pt} % 段后1em空白
+
+% 修改图标题为 "图"
+\renewcommand{\figurename}{图}
+\captionsetup[figure]{labelsep=space} % 修改图标题的分隔符为一个空格
+
+% 正文设置：仿宋四号，行距28磅，段后0磅，段前0磅，首行缩进2字符
+\setlength{\parindent}{2em} % 首行缩进2字符
+\setlength{\parskip}{0pt} % 段后间距为0磅
+\renewcommand{\baselinestretch}{1.75} % 行距28磅
+
+\endinput

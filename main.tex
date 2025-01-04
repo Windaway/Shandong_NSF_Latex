@@ -1,0 +1,31 @@
+\documentclass[12pt]{article}
+\usepackage{custom} % 引入自定义样式文件
+\usepackage{amsmath} % 公式支持
+\usepackage{graphicx} % 图片支持
+\usepackage[backend=biber,style=gb7714-2015]{biblatex} % 中文参考文献样式
+\addbibresource{references.bib} % 引入参考文献数据库文件
+\renewcommand*{\bibfont}{\footnotesize}
+
+\defbibheading{custom}[参考文献]{%
+\vspace{10pt}
+    \noindent\CJKfamily{hei}\fontsize{14pt}{14pt}\selectfont #1
+    \vspace{2pt}
+}
+\begin{document}
+
+% 一级标题（手动输入编号） \CJKfamily{kai}{（不超过12000字）}
+\section{四、报告正文}
+% 二级标题（手动输入编号）
+\subsection{（一）立项依据}
+
+\printbibliography[heading=custom]
+
+\subsection{（二）研究内容、研究目标以及拟解决的重大科学问题或关键技术难题}
+
+\subsection{（三）拟采取的研究方案及可行性分析}
+
+\subsection{（四）本项目的特色与创新之处}
+
+\subsection{（五）年度研究计划及预期成果}
+
+\end{document}
